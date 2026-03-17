@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2C2F33;
+    color: #ffffff;
+    margin: 0;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.relogio-container {
+    text-align: center;
+    background-color: #23272A;
+    padding: 50px 70px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.legenda {
+    font-size: 1.5em;
+    color: #99AAB5;
+    margin-bottom: 20px;
+}
+
+#hora_atual {
+    font-size: 5em;
+    color: #ffffff;
+    font-weight: bold;
+}
