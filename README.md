@@ -12,3 +12,8 @@ Ele exibe a hora atual no estilo escuro tipo Discord, com atualização automát
 Abaixo está um exemplo de como o relógio aparece em tempo real:
 
 ![TimeToWork Relógio](Gif.gif)
+
+## Explicação do Código
+
+### 1. HoraServlet.java
+O arquivo `HoraServlet.java` está localizado em `TimeToWork/WEB-INF/classes/HoraServlet.java` e é responsável por fornecer a **hora atual do servidor**.
