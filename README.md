@@ -43,3 +43,37 @@ O arquivo `HoraServlet.java` está localizado em `TimeToWork/WEB-INF/classes/Hor
 
 - `import javax.servlet.http.HttpServletResponse;`  
   → Permite enviar dados de volta ao cliente via resposta HTTP.
+
+  ### Estrutura do Servlet
+
+- `public class HoraServlet extends HttpServlet {}`  
+  → Cria um servlet. O `extends HttpServlet` significa que a classe pode **responder a requisições HTTP**.
+
+- `protected void doGet(HttpServletRequest request, HttpServletResponse response)`  
+  → `protected` é um **modificador de acesso**, ou seja, o método pode ser usado pela própria classe e por subclasses.  
+  → `void` indica que o método **não retorna valor direto**.  
+  → `doGet` é o **nome do método**, que responde a requisições GET enviadas pelo cliente.  
+  → `HttpServletRequest request` representa a **requisição enviada pelo cliente**.  
+  → `HttpServletResponse response` representa a **resposta que será enviada ao cliente**.
+
+- `throws ServletException, IOException`  
+  → Esse método pode gerar erros.  
+  → `ServletException` trata **erros relacionados ao servlet**.  
+  → `IOException` trata **erros de entrada/saída**.
+
+- `response.setContentType("text/plain");`  
+  → Informa ao navegador que **o conteúdo enviado será texto simples**.
+
+- `SimpleDateFormat formato = new SimpleDateFormat("HH:mm:ss", new Locale("pt", "BR"));`  
+  → `SimpleDateFormat` transforma datas em texto formatado.  
+  → `"HH:mm:ss"` define o **formato da hora** (horas:minutos:segundos).  
+  → `new Locale("pt", "BR")` define **idioma e região** (Português, Brasil).
+
+- `String hora = formato.format(new Date());`  
+  → Guarda o resultado em uma **variável do tipo texto (`String`)** chamada `hora`.  
+  → `formato.format(...)` pega o objeto `Date` e o converte no **formato HH:mm:ss**.  
+  → `new Date()` cria um objeto de **data/hora atual do sistema**.
+
+- `response.getWriter().write(hora);`  
+  → `getWriter()` retorna um objeto que permite **escrever texto na resposta HTTP**.  
+  → `write(hora)` escreve o **conteúdo da variável `hora`** que será enviado para o navegador.
