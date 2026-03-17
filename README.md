@@ -17,3 +17,29 @@ Abaixo está um exemplo de como o relógio aparece em tempo real:
 
 ### 1. HoraServlet.java
 O arquivo `HoraServlet.java` está localizado em `TimeToWork/WEB-INF/classes/HoraServlet.java` e é responsável por fornecer a **hora atual do servidor**.
+
+### Imports Utilizados
+
+- `import java.io.IOException;`  
+  → Tratamento de exceções de entrada/saída no servlet.
+
+- `import java.text.SimpleDateFormat;`  
+  → Formatação da data e hora em um padrão específico.
+
+- `import java.util.Date;`  
+  → Representa a data e hora atual do sistema.
+
+- `import java.util.Locale;`  
+  → Define a localidade (pt-BR) para formatar corretamente a hora.
+
+- `import javax.servlet.ServletException;`  
+  → Tratamento de exceções específicas de servlets.
+
+- `import javax.servlet.http.HttpServlet;`  
+  → Classe base para criar servlets HTTP.
+
+- `import javax.servlet.http.HttpServletRequest;`  
+  → Permite acessar dados da requisição HTTP enviada pelo cliente.
+
+- `import javax.servlet.http.HttpServletResponse;`  
+  → Permite enviar dados de volta ao cliente via resposta HTTP.
