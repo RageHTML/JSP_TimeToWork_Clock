@@ -77,3 +77,41 @@ O arquivo `HoraServlet.java` está localizado em `TimeToWork/WEB-INF/classes/Hor
 - `response.getWriter().write(hora);`  
   → `getWriter()` retorna um objeto que permite **escrever texto na resposta HTTP**.  
   → `write(hora)` escreve o **conteúdo da variável `hora`** que será enviado para o navegador.
+
+### 2. web.xml
+
+O arquivo `web.xml` está localizado em `TimeToWork/WEB-INF/web.xml` e é responsável por **configurar os servlets e mapear suas rotas**.
+
+### Estrutura do web.xml
+
+- `<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="3.1">`  
+  → Define que este é o **arquivo de configuração da aplicação web**.  
+  → `version="3.1"` indica a versão da **Servlet API** utilizada.
+
+- `<servlet>`  
+  → Define um **servlet** na aplicação.  
+
+    - `<servlet-name>HoraServlet</servlet-name>`  
+      → Nome lógico do servlet, usado para referência no mapeamento de URL.  
+
+    - `<servlet-class>HoraServlet</servlet-class>`  
+      → Nome da **classe Java** que implementa o servlet (`HoraServlet.class`).
+
+- `</servlet>`  
+  → Fecha a definição do servlet.
+
+- `<servlet-mapping>`  
+  → Mapeia o servlet para uma **rota específica**.
+
+    - `<servlet-name>HoraServlet</servlet-name>`  
+      → Referencia o **nome do servlet** definido anteriormente.
+
+    - `<url-pattern>/hora</url-pattern>`  
+      → Define o **caminho de acesso no navegador**.  
+      → Ex.: `http://localhost:8080/TimeToWork/hora` chama o `HoraServlet`.
+
+- `</servlet-mapping>`  
+  → Fecha o mapeamento do servlet.
+
+- `</web-app>`  
+  → Fecha a definição da aplicação web no `web.xml`.
