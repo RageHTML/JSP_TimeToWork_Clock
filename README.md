@@ -44,7 +44,7 @@ O arquivo `HoraServlet.java` está localizado em `TimeToWork/WEB-INF/classes/Hor
 - `import javax.servlet.http.HttpServletResponse;`  
   → Permite enviar dados de volta ao cliente via resposta HTTP.
 
-  ### Estrutura do Servlet
+## Estrutura do Servlet
 
 - `public class HoraServlet extends HttpServlet {}`  
   → Cria um servlet. O `extends HttpServlet` significa que a classe pode **responder a requisições HTTP**.
@@ -82,7 +82,7 @@ O arquivo `HoraServlet.java` está localizado em `TimeToWork/WEB-INF/classes/Hor
 
 O arquivo `web.xml` está localizado em `TimeToWork/WEB-INF/web.xml` e é responsável por **configurar os servlets e mapear suas rotas**.
 
-### Estrutura do web.xml
+## Estrutura do web.xml
 
 - `<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="3.1">`  
   → Define que este é o **arquivo de configuração da aplicação web**.  
