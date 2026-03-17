@@ -115,3 +115,29 @@ O arquivo `web.xml` está localizado em `TimeToWork/WEB-INF/web.xml` e é respon
 
 - `</web-app>`  
   → Fecha a definição da aplicação web no `web.xml`.
+
+### 3. hora.js
+
+O arquivo `hora.js` está localizado em `TimeToWork/js/hora.js` e é responsável por **atualizar a hora em tempo real** na página principal (`main.jsp`).
+
+## Estrutura do hora.js
+
+- `function atualizarHora() { ... }`  
+  → Cria uma **função chamada `atualizarHora`** que busca e atualiza a hora atual.
+
+    - `fetch("/TimeToWork/hora")`  
+      → Faz uma **requisição HTTP GET** para o servlet `HoraServlet`.  
+      → Pega a hora atual que o servlet fornece como **texto simples**.
+
+    - `.then(response => response.text())`  
+      → Recebe a **resposta da requisição** e transforma em **texto legível**.
+
+    - `.then(data => { document.getElementById("hora_atual").innerText = data; })`  
+      → Atualiza o conteúdo do elemento HTML com id `hora_atual`.  
+      → Mostra a hora retornada pelo servlet diretamente na página.
+
+- `setInterval(atualizarHora, 1000);`  
+  → Chama a função `atualizarHora` **a cada 1000 milissegundos (1 segundo)** para manter a hora atualizada em tempo real.
+
+- `atualizarHora();`  
+  → Executa a função **imediatamente** quando o arquivo é carregado, para não precisar esperar o primeiro intervalo.
